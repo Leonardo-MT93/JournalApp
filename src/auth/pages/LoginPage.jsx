@@ -17,15 +17,18 @@ import {
 } from "../../store/auth/thunks";
 import { useMemo } from "react";
 
+  const formData = {
+    email: "",
+    password: "",
+  }
+
+
 export const LoginPage = () => {
   const { errorMessage, status } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
-  const { onInputChange, email, password } = useForm({
-    email: "leonardo@gmail.com",
-    password: "123qwe",
-  });
+  const { onInputChange, email, password } = useForm(formData);
   //Si esta autenticado evitamos que vuelva a loguearse
 
   const isAuthenticated = useMemo(() => status === "checking", [status]);
