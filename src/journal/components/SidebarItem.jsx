@@ -32,7 +32,7 @@ export const SidebarItem = ({ title = '', body, id,date, imgURLs = [] }) => {
             <TurnedInNot />
           </ListItemIcon>
           <Grid container >
-            <ListItemText primary={newTitle} />
+            <ListItemText primary={newTitle} style={{textDecoration: 'underline', fontWeight: 'bolder'}}/>
             <ListItemText secondary={body} />
           </Grid>
         </ListItemButton>
